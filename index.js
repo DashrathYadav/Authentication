@@ -9,7 +9,7 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(authRoutes);
 app.use(cookeiParser());
-const dbURI ="mongodb+srv://sandy:1221@cluster0.zx86ege.mongodb.net/coding-bee";
+const dbURI =process.env.URL;
 
 mongoose
   .connect(dbURI)
@@ -18,7 +18,7 @@ mongoose
   });
 
 const token = "TOKEN_IS_HERE";
-const port = 3000;
+const port =process.env.PORT|| 3000;
 const USERS = [];
 const QUESTIONS = [
   {
