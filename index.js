@@ -7,6 +7,7 @@ const cookeiParser=require("cookie-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.set("view engine", "ejs");
+require('dotenv').config();
 app.use(authRoutes);
 app.use(cookeiParser());
 const dbURI =process.env.URL;
